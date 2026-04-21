@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ImunisasiKu – Sistem Reminder Imunisasi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="CSS/style.css" />
+    </head>
+    <body>
+
+    <!-- Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Hamburger -->
+    <button id="toggle-btn" aria-label="Toggle sidebar">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+    </button>
+
+    <!-- Sidebar -->
+    <aside id="sidebar">
+    <div class="sidebar-brand">
+        <div class="brand-icon">💉</div>
+        <div>
+        <div class="brand-name">ImunisasiKu</div>
+        <div class="brand-sub">Reminder System</div>
+        </div>
+    </div>
+
+    <nav aria-label="Main navigation">
+        <ul>
+        <li>
+            <a href="#" class="nav-link active" data-section="home">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link" data-section="layanan">
+            <span class="nav-icon">🏥</span>
+            <span class="nav-label">Layanan</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link" data-section="vaksin">
+            <span class="nav-icon">💊</span>
+            <span class="nav-label">Vaksin</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link" data-section="contact">
+            <span class="nav-icon">📞</span>
+            <span class="nav-label">Contact Person</span>
+            </a>
+        </li>
+        </ul>
+    </nav>
+
+    <div class="sidebar-auth">
+        <a href="api/login.php" class="auth-btn btn-login">🔐&nbsp; Login</a>
+        <a href="api/register.php" class="auth-btn btn-register">✨&nbsp; Register</a>
+    </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+    <!-- HOME -->
+    <section id="home" class="section active">
+        <div class="hero">
+        <div class="hero-badge">🔔 Sistem Reminder Imunisasi Terpercaya</div>
+        <h1>
+            Jadwal Vaksin<br>
+            <span class="gradient-text">Tepat Waktu,</span><br>
+            Anak Sehat Selalu
+        </h1>
+        <p>
+            ImunisasiKu mengirimkan notifikasi jadwal vaksin langsung ke perangkat Anda.
+            Tidak ada lagi jadwal yang terlewat – kesehatan si kecil adalah prioritas kami.
+        </p>
+        <div class="hero-cta">
+            <a href="#" class="cta-primary nav-link" data-section="vaksin">Mulai Sekarang</a>
+            <a href="#" class="cta-secondary nav-link" data-section="layanan">Lihat Layanan</a>
+        </div>
+        <div class="hero-cards">
+            <div class="hero-card">
+            <div class="hero-card-icon">🔔</div>
+            <h3>Notifikasi Otomatis</h3>
+            <p>Pengingat jadwal vaksin dikirim langsung ke ponsel Anda sebelum jadwal tiba.</p>
+            </div>
+            <div class="hero-card">
+            <div class="hero-card-icon">📊</div>
+            <h3>Riwayat Lengkap</h3>
+            <p>Pantau riwayat imunisasi anak Anda secara digital, kapan saja dan di mana saja.</p>
+            </div>
+            <div class="hero-card">
+            <div class="hero-card-icon">👨‍⚕️</div>
+            <h3>Konsultasi Dokter</h3>
+            <p>Terhubung langsung dengan tenaga medis profesional untuk konsultasi vaksin.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN -->
+    <section id="layanan" class="section">
+        </section>
+
+    <!-- VAKSIN -->
+    <section id="vaksin" class="section">
+        <!-- Header -->
+        <div class="vaksin-header">
+        <h1>Selamat Datang</h1>
+        <div class="subtitle">Layanan Vaksin Terpercaya Untuk Anak</div>
+        </div>
+
+        <!-- Box content -->
+        <div class="vaksin-box">
+        <div class="vaksin-box-img" role="img" aria-label="Gambar Rumah Sakit Modern"></div>
+        <div class="vaksin-box-text">
+            <h2>Vaksinasi Untuk Semua Kalangan</h2>
+            <p>
+            Kami menyediakan layanan vaksinasi komprehensif untuk setiap tahap kehidupan —
+            dari bayi baru lahir hingga lansia. Kesehatan Anda adalah investasi terbaik bagi masa depan.
+            </p>
+        </div>
+        </div>
+
+        <!-- Jenis Vaksinasi -->
+        <div class="section-label">Kategori Vaksinasi</div>
+        <div class="section-title">Jenis Vaksinasi yang Tersedia</div>
+
+        <ul class="vaksin-list" role="list">
+        <li>
+            <div class="vl-icon">👶</div>
+            <div class="vl-text">
+            <div class="vl-name">Vaksinasi untuk Anak</div>
+            <div class="vl-desc">BCG, Polio, DPT, Campak, MMR &amp; lebih banyak lagi</div>
+            </div>
+        </li>
+        <li>
+            <div class="vl-icon">🧑</div>
+            <div class="vl-text">
+            <div class="vl-name">Vaksinasi untuk Dewasa</div>
+            <div class="vl-desc">Influenza, Hepatitis B, Tifoid, COVID-19 Booster</div>
+            </div>
+        </li>
+        <li>
+            <div class="vl-icon">👴</div>
+            <div class="vl-text">
+            <div class="vl-name">Vaksinasi untuk Lansia</div>
+            <div class="vl-desc">Pneumonia, Herpes Zoster, Influenza dosis tinggi</div>
+            </div>
+        </li>
+        <li>
+            <div class="vl-icon">💍</div>
+            <div class="vl-text">
+            <div class="vl-name">Vaksinasi Pra-Nikah (Premarital)</div>
+            <div class="vl-desc">HPV, Rubella, Hepatitis A &amp; B untuk calon pasutri</div>
+            </div>
+        </li>
+        </ul>
+
+        <!-- Button Lihat Selengkapnya -->
+        <a href="https://imuni.id/" target="_blank" class="btn-more">
+        Lihat Selengkapnya
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+        </a>
+
+        <!-- Jenis Layanan Vaksin -->
+        <div class="section-label">Layanan Unggulan</div>
+        <div class="section-title">Jenis Layanan Vaksin</div>
+
+        <div class="layanan-grid">
+        <div class="layanan-card">
+            <div class="lc-icon">🚪</div>
+            <h3>Layanan Vaksinasi Door to Door</h3>
+            <p>Tim vaksinasi profesional kami siap datang ke lokasi Anda. Nyaman, aman, dan higienis tanpa perlu antre.</p>
+        </div>
+        <div class="layanan-card">
+            <div class="lc-icon">🏥</div>
+            <h3>Layanan ke Instansi Kesehatan</h3>
+            <p>Kunjungi klinik atau rumah sakit rekanan kami untuk mendapatkan vaksinasi berstandar internasional.</p>
+        </div>
+        <div class="layanan-card">
+            <div class="lc-icon">👨‍⚕️</div>
+            <h3>Konsultasi dengan Dokter</h3>
+            <p>Diskusikan kebutuhan vaksin Anda langsung bersama dokter spesialis secara online maupun offline.</p>
+        </div>
+        </div>
+
+        <!-- Feedback & Laporan -->
+        <div class="feedback-section">
+        <h3>📝 Question &amp; Answer</h3>
+        <p>Apabila ada pertanyaan yang ingin ditanyakan, silahkan mengisi form di bawah ini.🤗</p>
+
+        <form class="feedback-form" id="contactForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="ct-name">Nama Lengkap</label>
+                    <input type="text" id="ct-name" name="name" placeholder="Masukkan nama Anda" required />
+                </div>
+                <div class="form-group">
+                    <label for="ct-email">Email</label>
+                    <input type="email" id="ct-email" name="email" placeholder="email@contoh.com" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ct-subject">Subjek Pertanyaan</label>
+                <input type="text" id="ct-subject" name="subject" placeholder="Contoh: Info Layanan Door to Door" required />
+            </div>
+            <div class="form-group">
+                <label for="ct-message">Pesan / Pertanyaan</label>
+                <textarea id="ct-message" name="message" placeholder="Tuliskan pertanyaan Anda di sini..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="ctSubmitBtn">Kirim Pesan</button>
+        </form>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 <strong>ImunisasiKu</strong> — Sistem Reminder Imunisasi. All rights reserved.</p>
+    </footer>
+
+    <script src="JS/main.js"></script>
+</body>
+</html>
