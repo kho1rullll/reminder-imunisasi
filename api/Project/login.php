@@ -15,6 +15,9 @@
             
             // Verifikasi password
             if (password_verify($password, $row['password'])) {
+
+                echo "<h1>LOGIN SUKSES! DATABASE DAN PASSWORD AMAN!</h1>";
+                exit();
                 // Set Session
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['nama'] = $row['nama'];
