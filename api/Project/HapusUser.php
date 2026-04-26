@@ -4,6 +4,19 @@ session_start();
 // 1. Panggil koneksi database (mundur 1 folder, lalu masuk ke Server)
 require __DIR__ . '/../Server/koneksi.php';
 
+if (!isset($_SESSION['id']) && isset($_COOKIE['login_email'])) {
+    $cookie_email = $_COOKIE['login_email'];
+    $query_cookie = mysqli_query($koneksi, "SELECT * FROM users WHERE email = '$cookie_email'");
+    
+    if (mysqli_num_rows($query_cookie) === 1) {
+        $row = mysqli_fetch_assoc($query_cookie);
+        $_SESSION['id'] = $row['id'];
+        $_SESSION['nama'] = $row['nama'];
+        $_SESSION['email'] = $row['email'];
+        $_SESSION['role'] = $row['role'];
+    }
+}
+
 // 2. Proteksi Halaman: Pastikan yang melakukan aksi ini benar-benar Admin
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 'admin') {
     header("Location: ../login.php");
