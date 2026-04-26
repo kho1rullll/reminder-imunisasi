@@ -1,12 +1,30 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "db_reminder_imunisasii"; 
+// Data dari TiDB Cloud
+$host = 'gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com';
+$port = 4000;
+$user = '3bmAWZ4PccKeCCB.root';
+$pass = 'RJfeZm4qM0tfJUNg';
+$db   = 'db-reminder-imunisasi-v1';
 
-$koneksi = mysqli_connect($host, $user, $pass, $db);
+// Inisialisasi mysqli
+$koneksi = mysqli_init();
 
-if (!$koneksi) {
-    die("Koneksi dengan database gagal: " . mysqli_connect_error());
+// Menambahkan pengaturan SSL (Wajib untuk TiDB Serverless)
+mysqli_ssl_set($koneksi, NULL, NULL, NULL, NULL, NULL);
+
+// Melakukan koneksi
+$real_connect = mysqli_real_connect(
+    $koneksi, 
+    $host, 
+    $user, 
+    $pass, 
+    $db, 
+    $port, 
+    NULL, 
+    MYSQLI_CLIENT_SSL
+);
+
+if (!$real_connect) {
+    die("Koneksi ke TiDB Cloud gagal: " . mysqli_connect_error());
 }
 ?>
