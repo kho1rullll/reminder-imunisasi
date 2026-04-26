@@ -16,13 +16,14 @@
             // Verifikasi password
             if (password_verify($password, $row['password'])) {
 
-                echo "<h1>LOGIN SUKSES! DATABASE DAN PASSWORD AMAN!</h1>";
-                exit();
                 // Set Session
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['nama'] = $row['nama'];
                 $_SESSION['email'] = $row['email']; // Tambahan untuk halaman Profil
                 $_SESSION['role'] = $row['role'];
+
+                setcookie("login_email", $row['email'], time() + 3600, "/");
+                setcookie("login_role", $row['role'], time() + 3600, "/");
 
                 // Arahkan berdasarkan Role
                 if ($row['role'] == 'admin') {
