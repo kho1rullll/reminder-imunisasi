@@ -1,5 +1,6 @@
 <?php
 session_start();
+require 'Server/koneksi.php';
 
 if (!isset($_SESSION['id']) && isset($_COOKIE['login_email'])) {
     $cookie_email = $_COOKIE['login_email'];
