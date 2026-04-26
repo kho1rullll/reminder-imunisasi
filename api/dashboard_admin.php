@@ -58,7 +58,7 @@ $laporan_pending = mysqli_fetch_assoc($q_laporan_pending)['total'];
     <title>Admin Panel – ImunisasiKu</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image" href="images/Favicon.png">
+    <link rel="icon" type="image" href="../../images/Favicon.png">
     <script>
         tailwind.config = {
             theme: {
