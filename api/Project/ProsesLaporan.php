@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../Server/koneksi.php';
+require __DIR__ . '/../Server/koneksi.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id        = $_POST['user_id'];

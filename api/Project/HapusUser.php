@@ -2,7 +2,7 @@
 session_start();
 
 // 1. Panggil koneksi database (mundur 1 folder, lalu masuk ke Server)
-require '../../Server/koneksi.php';
+require __DIR__ . '/../Server/koneksi.php';
 
 // 2. Proteksi Halaman: Pastikan yang melakukan aksi ini benar-benar Admin
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 'admin') {

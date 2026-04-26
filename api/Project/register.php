@@ -2,7 +2,7 @@
 session_start();
 
 // Panggil koneksi database (mundur 1 folder, lalu masuk ke Server)
-require '../../Server/koneksi.php';
+require __DIR__ . '/../Server/koneksi.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Menangkap inputan dari form

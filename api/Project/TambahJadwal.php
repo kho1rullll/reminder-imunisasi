@@ -2,7 +2,7 @@
 session_start();
 
 // Mundur 1 folder untuk memanggil koneksi
-require '../../Server/koneksi.php'; 
+require __DIR__ . '/../Server/koneksi.php'; 
 
 // Pastikan hanya user yang bisa melakukan aksi ini
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 'user') {

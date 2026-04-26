@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../Server/koneksi.php';
+require __DIR__ . '/../Server/koneksi.php';
 
 // Proteksi akses
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 'admin') {
