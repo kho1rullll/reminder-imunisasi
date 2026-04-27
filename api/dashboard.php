@@ -103,7 +103,9 @@ $query_riwayat = mysqli_query($koneksi, "SELECT * FROM jadwal_imunisasi
         <div class="sidebar-blob2"></div>
 
         <div class="flex items-center gap-3 p-6 pb-5 border-b border-white/12 relative z-10">
-            <div class="w-11 h-11 bg-white/20 border border-white/30 rounded-2xl flex items-center justify-center text-2xl backdrop-blur flex-shrink-0">💉</div>
+            <div class="w-11 h-11 bg-white/20 border border-white/30 rounded-2xl flex items-center justify-center backdrop-blur flex-shrink-0 overflow-hidden">
+                <img src="../../images/Favicon.png" alt="Logo ImunisasiKu" class="w-full h-full object-contain p-1.5">
+            </div>
             <div>
                 <div class="font-bold text-white text-base leading-tight">ImunisasiKu</div>
                 <div class="text-white/50 text-xs uppercase tracking-wider">Reminder System</div>
