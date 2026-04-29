@@ -1,4 +1,8 @@
 <?php
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 session_start();
 require 'Server/koneksi.php';
 
@@ -174,6 +178,7 @@ $query_riwayat = mysqli_query($koneksi, "SELECT * FROM jadwal_imunisasi
                     <h1 class="text-lg font-bold text-gray-800" id="pageTitle">Dashboard</h1>
                     <p class="text-xs text-gray-400" id="pageDate"></p>
                 </div>
+            </div>
             <div class="flex items-center gap-4">
                 <div class="relative hidden sm:block">
                     <input type="text" placeholder="Cari vaksin, jadwal..." class="pl-9 pr-4 py-2 text-sm bg-gray-50 border border-gray-200 rounded-xl w-52 focus:outline-none focus:border-brand-sky focus:ring-2 focus:ring-sky-100 transition-all" />
@@ -233,7 +238,7 @@ $query_riwayat = mysqli_query($koneksi, "SELECT * FROM jadwal_imunisasi
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
                     <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
                         <div class="flex items-center justify-between mb-5">
                             <h3 class="font-bold text-gray-800">📅 Jadwal Mendatang</h3>
