@@ -353,7 +353,7 @@ $query_riwayat = mysqli_query($koneksi, "SELECT * FROM jadwal_imunisasi
 
             <div id="tab-riwayat" class="tab-content hidden">
                 <h2 class="text-xl font-bold text-gray-800 mb-6">📋 Riwayat Imunisasi</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
                     <?php while($row = mysqli_fetch_assoc($query_riwayat)) : ?>
                     <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm flex flex-col sm:flex-row sm:items-center gap-4 hover:border-brand-sky transition-colors">
                         <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">✅</div>
@@ -423,7 +423,7 @@ $query_riwayat = mysqli_query($koneksi, "SELECT * FROM jadwal_imunisasi
                             <p class="font-semibold text-sm uppercase"><?php echo $_SESSION['role']; ?></p>
                         </div>
                     </div>
-                    <div class="lg:col-span-2 bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                    <div class="lg:col-span-3 bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
                         <h3 class="font-bold text-gray-800 mb-5">Edit Informasi Profil</h3>
                         <form class="space-y-4" onsubmit="event.preventDefault(); alert('Profil berhasil diperbarui!')">
                             <div>
