@@ -98,7 +98,7 @@ $query_riwayat = mysqli_query($koneksi, "SELECT * FROM jadwal_imunisasi
 </head>
 <body class="bg-gray-50 h-screen flex overflow-hidden">
 
-    <aside class="sidebar-bg w-64 flex-shrink-0 flex flex-col z-50 relative overflow-hidden" id="dashSidebar">
+    <aside id="dashSidebar" class="sidebar-bg w-64 flex-shrink-0 flex flex-col z-[60] fixed inset-y-0 left-0 transform -translate-x-full transition-transform duration-300 md:relative md:translate-x-0 overflow-hidden">
         <div class="sidebar-blob1"></div>
         <div class="sidebar-blob2"></div>
 
@@ -161,13 +161,19 @@ $query_riwayat = mysqli_query($koneksi, "SELECT * FROM jadwal_imunisasi
         </div>
     </aside>
 
+    <div id="sidebarOverlay" onclick="toggleSidebar()" class="fixed inset-0 bg-gray-900/50 z-50 hidden md:hidden backdrop-blur-sm transition-opacity"></div>
+
     <div class="flex-1 flex flex-col overflow-hidden">
 
-        <header class="bg-white border-b border-gray-100 px-8 py-4 flex items-center justify-between shadow-sm z-40">
-            <div>
-                <h1 class="text-lg font-bold text-gray-800" id="pageTitle">Dashboard</h1>
-                <p class="text-xs text-gray-400" id="pageDate"></p>
-            </div>
+        <header class="bg-white border-b border-gray-100 px-4 sm:px-8 py-4 flex items-center justify-between shadow-sm z-40">
+            <div class="flex items-center gap-3">
+                <button onclick="toggleSidebar()" class="md:hidden text-gray-500 hover:text-brand-blue focus:outline-none text-2xl border-0 bg-transparent cursor-pointer">
+                    ☰
+                </button>
+                <div>
+                    <h1 class="text-lg font-bold text-gray-800" id="pageTitle">Dashboard</h1>
+                    <p class="text-xs text-gray-400" id="pageDate"></p>
+                </div>
             <div class="flex items-center gap-4">
                 <div class="relative hidden sm:block">
                     <input type="text" placeholder="Cari vaksin, jadwal..." class="pl-9 pr-4 py-2 text-sm bg-gray-50 border border-gray-200 rounded-xl w-52 focus:outline-none focus:border-brand-sky focus:ring-2 focus:ring-sky-100 transition-all" />
@@ -204,7 +210,7 @@ $query_riwayat = mysqli_query($koneksi, "SELECT * FROM jadwal_imunisasi
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8">
                     <div class="stat-card bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
                         <div class="w-11 h-11 bg-blue-50 rounded-xl flex items-center justify-center text-xl mb-4">💉</div>
                         <p class="text-2xl font-bold text-gray-800"><?= $stat_selesai; ?></p>
@@ -227,7 +233,7 @@ $query_riwayat = mysqli_query($koneksi, "SELECT * FROM jadwal_imunisasi
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8">
                     <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
                         <div class="flex items-center justify-between mb-5">
                             <h3 class="font-bold text-gray-800">📅 Jadwal Mendatang</h3>
@@ -342,7 +348,7 @@ $query_riwayat = mysqli_query($koneksi, "SELECT * FROM jadwal_imunisasi
 
             <div id="tab-riwayat" class="tab-content hidden">
                 <h2 class="text-xl font-bold text-gray-800 mb-6">📋 Riwayat Imunisasi</h2>
-                <div class="grid grid-cols-1 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8">
                     <?php while($row = mysqli_fetch_assoc($query_riwayat)) : ?>
                     <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm flex flex-col sm:flex-row sm:items-center gap-4 hover:border-brand-sky transition-colors">
                         <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">✅</div>
@@ -381,7 +387,7 @@ $query_riwayat = mysqli_query($koneksi, "SELECT * FROM jadwal_imunisasi
 
             <div id="tab-konsultasi" class="tab-content hidden">
                 <h2 class="text-xl font-bold text-gray-800 mb-6">👨‍⚕️ Konsultasi Dokter</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8">
                     <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:border-brand-sky transition-colors cursor-pointer">
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-14 h-14 bg-gradient-to-br from-brand-blue to-brand-sky rounded-2xl flex items-center justify-center text-2xl text-white">👨‍⚕️</div>
@@ -402,7 +408,7 @@ $query_riwayat = mysqli_query($koneksi, "SELECT * FROM jadwal_imunisasi
 
             <div id="tab-profil" class="tab-content hidden">
                 <h2 class="text-xl font-bold text-gray-800 mb-6">👤 Profil Saya</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8">
                     <div class="bg-gradient-to-br from-brand-blue to-brand-sky rounded-2xl p-6 text-white text-center">
                         <div class="w-20 h-20 bg-white/20 border-2 border-white/30 rounded-full flex items-center justify-center text-4xl mx-auto mb-4">👤</div>
                         <h3 class="font-bold text-lg"><?php echo $_SESSION['nama']; ?></h3>
@@ -621,6 +627,17 @@ $query_riwayat = mysqli_query($koneksi, "SELECT * FROM jadwal_imunisasi
                 }
             })
             .catch(error => console.error('Error:', error));
+
+            // ====== LOGIKA TOGGLE SIDEBAR MOBILE ======
+            function toggleSidebar() {
+                const sidebar = document.getElementById('dashSidebar');
+                const overlay = document.getElementById('sidebarOverlay');
+                
+                // Geser sidebar masuk/keluar
+                sidebar.classList.toggle('-translate-x-full');
+                // Tampilkan/sembunyikan overlay gelap
+                overlay.classList.toggle('hidden');
+            }
     </script>
 </body>
 </html>

@@ -90,7 +90,7 @@ $laporan_pending = mysqli_fetch_assoc($q_laporan_pending)['total'];
 </head>
 <body class="bg-gray-50 h-screen flex overflow-hidden">
 
-    <aside class="sidebar-bg w-64 flex-shrink-0 flex flex-col z-50 relative overflow-hidden">
+    <aside id="dashSidebar" class="sidebar-bg w-64 flex-shrink-0 flex flex-col z-[60] fixed inset-y-0 left-0 transform -translate-x-full transition-transform duration-300 md:relative md:translate-x-0 overflow-hidden">
         <div class="flex items-center gap-3 p-6 pb-5 border-b border-white/12 relative z-10">
             <div class="w-11 h-11 bg-white/20 border border-white/30 rounded-2xl flex items-center justify-center backdrop-blur flex-shrink-0 overflow-hidden">
                 <img src="../../images/Favicon.png" alt="Logo ImunisasiKu" class="w-full h-full object-contain p-1.5">
@@ -151,14 +151,20 @@ $laporan_pending = mysqli_fetch_assoc($q_laporan_pending)['total'];
         </div>
     </aside>
 
+    <div id="sidebarOverlay" onclick="toggleSidebar()" class="fixed inset-0 bg-gray-900/50 z-50 hidden md:hidden backdrop-blur-sm transition-opacity"></div>
+
     <div class="flex-1 flex flex-col overflow-hidden">
 
-        <header class="bg-white border-b border-gray-100 px-8 py-4 flex items-center justify-between shadow-sm z-40">
-            <div>
-                <h1 class="text-lg font-bold text-gray-800" id="pageTitle">Beranda Admin</h1>
-                <p class="text-xs text-gray-400" id="pageDate"></p>
+        <header class="bg-white border-b border-gray-100 px-4 sm:px-8 py-4 flex items-center justify-between shadow-sm z-40">
+            <div class="flex items-center gap-3">
+                <button onclick="toggleSidebar()" class="md:hidden text-gray-500 hover:text-brand-blue focus:outline-none text-2xl border-0 bg-transparent cursor-pointer">
+                    ☰
+                </button>
+                <div>
+                    <h1 class="text-lg font-bold text-gray-800" id="pageTitle">Beranda Admin</h1>
+                    <p class="text-xs text-gray-400" id="pageDate"></p>
+                </div>
             </div>
-            
             <div class="flex items-center gap-4">
                 <div class="relative">
                     <button id="profileBtn" class="flex items-center gap-2 bg-gradient-to-r from-brand-blue to-brand-sky rounded-xl px-3 py-2 text-white text-sm font-semibold hover:opacity-90 border-0">
@@ -184,7 +190,7 @@ $laporan_pending = mysqli_fetch_assoc($q_laporan_pending)['total'];
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8">
                     <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:-translate-y-1 transition-transform">
                         <div class="w-11 h-11 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4">👥</div>
                         <p class="text-2xl font-bold text-gray-800"><?= $total_user; ?></p>
@@ -317,7 +323,7 @@ $laporan_pending = mysqli_fetch_assoc($q_laporan_pending)['total'];
                     <button class="bg-gradient-to-r from-brand-blue to-brand-sky text-white px-4 py-2 rounded-xl text-sm font-semibold hover:opacity-90">+ Tambah Vaksin</button>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8">
                     <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="font-bold text-gray-800">DPT-HB-Hib</h3>
@@ -548,6 +554,13 @@ $laporan_pending = mysqli_fetch_assoc($q_laporan_pending)['total'];
                                         <span class="text-[10px]">Periksa API Key atau koneksi internet Anda</span>
                                     </div>`;
             });
+        function toggleSidebar() {
+            const sidebar = document.getElementById('dashSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
     </script>
 </body>
 </html>

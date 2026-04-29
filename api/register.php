@@ -41,7 +41,7 @@
             <div class="absolute bottom-[-60px] left-[-60px] w-56 h-56 rounded-full bg-white/6"></div>
             <div class="relative z-10">
                 <div class="flex items-center gap-3 p-6 pb-5 border-b border-white/12 relative z-10">
-                    <div class="w-11 h-11 bg-white/20 border border-white/30 rounded-2xl flex items-center justify-center backdrop-blur flex-shrink-0 overflow-hidden">
+                    <div class="w-11 h-11 bg-white` /20 border border-white/30 rounded-2xl flex items-center justify-center backdrop-blur flex-shrink-0 overflow-hidden">
                         <img src="../../images/Favicon.png" alt="Logo ImunisasiKu" class="w-full h-full object-contain p-1.5">
                     </div>
                     <div>
