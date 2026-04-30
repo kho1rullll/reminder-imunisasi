@@ -1,6 +1,23 @@
 <?php
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 session_start();
 require __DIR__ . '/../Server/koneksi.php';
+// 2. LOGIKA RESTORE SESSION DARI COOKIE (Sangat Penting untuk Vercel)
+if (!isset($_SESSION['id']) && isset($_COOKIE['login_email'])) {
+    $cookie_email = $_COOKIE['login_email'];
+    $query_cookie = mysqli_query($koneksi, "SELECT * FROM users WHERE email = '$cookie_email'");
+    
+    if (mysqli_num_rows($query_cookie) === 1) {
+        $row = mysqli_fetch_assoc($query_cookie);
+        $_SESSION['id'] = $row['id'];
+        $_SESSION['nama'] = $row['nama'];
+        $_SESSION['email'] = $row['email'];
+        $_SESSION['role'] = $row['role'];
+    }
+}
 
 // Pastikan hanya admin yang bisa melakukan aksi ini
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 'admin') {
