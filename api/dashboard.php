@@ -195,7 +195,6 @@ $query_riwayat = mysqli_query($koneksi, "SELECT * FROM jadwal_imunisasi
                     </button>
                     <div class="dropdown-menu" id="profileMenu">
                         <a href="#" class="flex items-center gap-2 px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 no-underline" onclick="switchTab('profil')">👤 Profil Saya</a>
-                        <a href="#" class="flex items-center gap-2 px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 no-underline border-t border-gray-100">⚙️ Pengaturan</a>
                         <a href="Project/logout.php" class="flex items-center gap-2 px-4 py-3 text-sm text-red-500 hover:bg-red-50 no-underline border-t border-gray-100">🚪 Keluar</a>
                     </div>
                 </div>
