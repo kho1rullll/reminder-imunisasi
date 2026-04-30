@@ -198,7 +198,7 @@ $laporan_pending = mysqli_fetch_assoc($q_laporan_pending)['total'];
                     <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:-translate-y-1 transition-transform">
                         <div class="w-11 h-11 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4">👥</div>
                         <p class="text-2xl font-bold text-gray-800"><?= $total_user; ?></p>
-                        <p class="text-xs text-gray-500 mt-1">Total Pengguna Aktif</p>
+                        <p class="text-xs text-gray-500 mt-1">Total Pengguna Aktif (User)</p>
                     </div>
                     <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:-translate-y-1 transition-transform">
                         <div class="w-11 h-11 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center text-xl mb-4">📅</div>
