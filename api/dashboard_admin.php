@@ -227,7 +227,7 @@ $laporan_pending = mysqli_fetch_assoc($q_laporan_pending)['total'];
             <div id="tab-pengguna" class="tab-content hidden">
                 <div class="flex items-center justify-between mb-6">
                     <h2 class="text-xl font-bold text-gray-800">👥 Manajemen Pengguna</h2>
-                    <button class="bg-gradient-to-r from-brand-blue to-brand-sky text-white px-4 py-2 rounded-xl text-sm font-semibold hover:opacity-90">+ Tambah Akun</button>
+                    <a href="tambah_user.php" class="bg-gradient-to-r from-brand-blue to-brand-sky text-white px-4 py-2 rounded-xl text-sm font-semibold hover:opacity-90 no-underline inline-block">+ Tambah Akun</a>
                 </div>
                 
                 <div class="bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden">
