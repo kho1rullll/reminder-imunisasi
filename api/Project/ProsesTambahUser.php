@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../Server/koneksi.php';
+require __DIR__ . '/../Server/koneksi.php';
 
 // Pastikan hanya admin yang bisa melakukan aksi ini
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 'admin') {

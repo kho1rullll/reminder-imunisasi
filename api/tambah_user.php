@@ -81,7 +81,7 @@ if (!isset($_SESSION['id']) || $_SESSION['role'] != 'admin') {
 
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-1.5">Password</label>
-                <input type="password" name="password" placeholder="Masukkan password sementara" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-brand-sky focus:ring-2 focus:ring-sky-100 transition-all" required>
+                <input type="password" name="password" placeholder="Masukkan Password" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-brand-sky focus:ring-2 focus:ring-sky-100 transition-all" required>
             </div>
 
             <div>
